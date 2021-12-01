@@ -30,11 +30,15 @@ const wordSearch = (letters, word) => {
   }
 
   // Diagonal search
-  // let verticalLine = "";
-  // for (let i = 0; i < letters.length; i++) {
-  //   verticalLine = verticalLine.concat(letters[i][i]);
+  // let diagonalLineUp = "", diagonalLineDown = "";
+  // for (let i = 0; i < letters.length - 1; i++) {
+  //   console.log(i);
+  //   diagonalLineUp = diagonalLineUp.concat(letters[i][i]);
+  //   // diagonalLineDown = diagonalLineDown.concat(letters[letters.length - i][letters.length - i]);
   // }
-  // if (verticalLine.includes(word)) return true;
+  // console.log(diagonalLineUp);
+  // if (diagonalLineUp.includes(word)) return true;
+  // if (diagonalLineDown.includes(word)) return true;
 
   // verticalLine = "";
   // for (let i = letters.length - 1; i >= 0; i--) {
