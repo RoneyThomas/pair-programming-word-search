@@ -30,21 +30,14 @@ const wordSearch = (letters, word) => {
   }
 
   // Diagonal search
-  // let diagonalLineUp = "", diagonalLineDown = "";
-  // for (let i = 0; i < letters.length - 1; i++) {
-  //   console.log(i);
-  //   diagonalLineUp = diagonalLineUp.concat(letters[i][i]);
-  //   // diagonalLineDown = diagonalLineDown.concat(letters[letters.length - i][letters.length - i]);
-  // }
-  // console.log(diagonalLineUp);
-  // if (diagonalLineUp.includes(word)) return true;
-  // if (diagonalLineDown.includes(word)) return true;
-
-  // verticalLine = "";
-  // for (let i = letters.length - 1; i >= 0; i--) {
-  //   verticalLine = verticalLine.concat(letters[i][i]);
-  // }
-  // if (verticalLine.includes(word)) return true;
+  letters.map(ls => (ls.reverse()).join(''));
+  let diagonalLineUp = "", diagonalLineDown = "";
+  for (let i = 0; i < letters.length - 1; i++) {
+    diagonalLineUp = diagonalLineUp.concat(letters[i][i]);
+    diagonalLineDown = diagonalLineDown.concat(letters[letters.length - 1 - i][letters.length - 1 - i]);
+  }
+  if (diagonalLineUp.includes(word)) return true;
+  if (diagonalLineDown.includes(word)) return true;
 
   return false;
 };
